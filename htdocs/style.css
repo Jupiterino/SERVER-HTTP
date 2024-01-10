@@ -1,0 +1,16 @@
+.b{
+    padding-top: 10%;
+}
+.a{
+    font-size: 200%;
+    background-color: rgb(163, 163, 163);
+    transition: 1s;
+    text-align: center;
+
+}
+.a:hover{
+    font-size: 250%;
+}
+img{
+    width: 100%;
+}
