@@ -28,18 +28,26 @@ public class App {
                 do {
                     f = in.readLine();
                     //System.out.println(f);
-
+                    
                 } while (!f.isEmpty());
-                
-                File file = new File("htdocs" + filePath);
-                
-
+                if(filePath.endsWith("/")){
+                    filePath = "index.html";
+                }
+                File file=null ;
                 if( filePath.equals("/test")){
                     System.out.println(filePath);
-                    out.writeBytes("HTTP/1.1 301 Moved Permanently");
-                    out.writeBytes("Location: https://www.google.com");
+                    out.writeBytes("HTTP/1.1 301 Moved Permanently"+"\n");
+                    out.writeBytes("Location: https://www.google.com"+"\n");
+                    out.writeBytes("\n");
                     }
+                    else{
+                        file = new File("htdocs" + filePath);        
+                    }
+
                 
+
+                
+            
                 if (file.exists()) {
                     
                     sendBinaryFile(s, file);
